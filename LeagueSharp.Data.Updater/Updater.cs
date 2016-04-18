@@ -71,6 +71,14 @@
                 await this.webclient.DownloadFileTaskAsync(url, $"Resources\\ChampionData\\{fileName}");
             }
 
+            this.ResetProgressBar();
+            Console.Write("Downloading item.json ");
+
+            await
+                this.webclient.DownloadFileTaskAsync(
+                    $"http://ddragon.leagueoflegends.com/cdn/{version}/data/en_US/item.json",
+                    "Resources\\item.json");
+
             this.ResetProgressBar(false);
 
             Console.Write("Writing champion.json ");
@@ -80,7 +88,7 @@
             Console.WriteLine("Done!");
             Console.ResetColor();
 
-            Console.Write("Finished updating L# Data champions. Press any key to quit.");
+            Console.Write("Finished updating LeagueSharp.Data. Press any key to quit. ");
             Console.ReadKey(true);
         }
 

@@ -19,7 +19,7 @@
 
         #region Fields
 
-        private readonly TimeSpan animationInterval = TimeSpan.FromSeconds(0.0125);
+        private readonly TimeSpan animationInterval = TimeSpan.FromSeconds(1.0 / 8);
 
         private readonly Timer timer;
 
